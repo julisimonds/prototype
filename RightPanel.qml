@@ -32,14 +32,14 @@ Item {
                     background: Rectangle{
                         color: "silver"
                         radius: 5
-                        border.color: "#8b8989"
+                        //border.color: "#8b8989"
                     }
                     onClicked:{
                         projColumn.visible = true
                         histColumn.visible = false
                         msgColumn.visible = false
-                        parent.color = "#C5DCFA"
-                        text.color = "#0F56B3"
+                        palette = "#DFEBFA"
+                        palette.buttonText = "#0F56B3"
                         label1 = true
                     }
                 }
@@ -52,14 +52,14 @@ Item {
                     background: Rectangle{
                         color: "silver"
                         radius: 5
-                        border.color: "#8b8989"
+                        //border.color: "#8b8989"
                     }
                     onClicked:{
                         projColumn.visible = false
                         histColumn.visible = true
                         msgColumn.visible = false
-                        parent.color = "#C5DCFA"
-                        text.color = "#0F56B3"
+                        color = "#DFEBFA"
+                        palette.buttonText = "#0F56B3"
                         label1 = true
                     }
                 }
@@ -72,13 +72,13 @@ Item {
                     background: Rectangle{
                         color: "silver"
                         radius: 5
-                        border.color: "#8b8989"
+                        //border.color: "#8b8989"
                         }
                     onClicked:{
                         projColumn.visible = false
                         histColumn.visible = false
                         msgColumn.visible = true
-                        color = "#C5DCFA"
+                        color = "#DFEBFA"
                         palette.buttonText = "#0F56B3"
                         label1 = true
                         }
@@ -116,10 +116,28 @@ Item {
                     anchors.left: projTitle + 50
                     text: qsTr(" +  Create New")
                     font.pointSize: 10
+                    font.bold: true
+                    palette.buttonText: "#3672C0"
                     background: Rectangle{
-                        color: "silver"
+                        color: "white"
+
                         radius: 10
                         border.color: "#8b8989"
+                    }
+                }
+                Rectangle{
+                    id: projPhoto1
+                    anchors.top: projLabel.bottom
+                    anchors.topMargin: 20
+                    anchors.left: right_panel
+                    color: "red"
+                    width: right_panel.width
+                    height: 250
+                    Image {
+                        source: "/materials/projects page.png"
+                        anchors.fill: parent
+                        fillMode: Image.PreserveAspectCrop
+                        visible: true
                     }
                 }
             }
@@ -140,7 +158,21 @@ Item {
                     color: black
                 }
             }
-
+            Rectangle{
+                id: projPhoto2
+                anchors.top: recentLabel.bottom
+                anchors.topMargin: 20
+                anchors.left: right_panel
+                color: "red"
+                width: right_panel.width
+                height: 150
+               // Image {
+                   // source: "/materials/projects page.png"
+                   // anchors.fill: parent
+                  //  fillMode: Image.PreserveAspectCrop
+                   // visible: true
+               // }
+            }
     }
 
         Rectangle{
@@ -206,18 +238,9 @@ Item {
                 anchors.left: right_panel.left
                 //bottomPadding: 40
                 //leftPadding: 20
-                Row{
-                    id: sim_results
-                    //height: right_panel.height - 200
-                    width: right_panel.width
-                    anchors.top: details_line.bottom
-                    anchors.left: right_panel.left
-                    bottomPadding: 40
-                    leftPadding: 20
-
                     Label {
                         id: sim_histLabel
-                        anchors.left: navigation_bar.left
+                        anchors.left: sim.left
                         //anchors.top: h.bottom + 50
                         rightPadding: 50
                         text: qsTr("Simulation History")
@@ -225,9 +248,22 @@ Item {
                         font.bold: true
                         color: "#000000"
                     }
-                }
             }
-
+                    Rectangle{
+                        id: histPhoto1
+                        anchors.top:sim_hist.bottom
+                        anchors.topMargin: 20
+                        anchors.left: right_panel
+                        color: "red"
+                        width: right_panel.width
+                        height: 150
+                        //Image {
+                         //   source: "/materials/history log page.png"
+                          //  anchors.fill: parent
+                           // fillMode: Image.PreserveAspectCrop
+                          //  visible: true
+                      //  }
+                    }
             Row{
                 id: data_hist
                 width: right_panel.width
@@ -248,7 +284,23 @@ Item {
                         color: "#000000"
                 }
             }
+            Rectangle{
+                id: histPhoto2
+                anchors.top: data_histLabel.bottom
+                anchors.topMargin: 20
+                anchors.left: right_panel
+                color: "red"
+                width: right_panel.width
+                height: 150
+                //Image {
+                    //source: "/materials/history log page.png"
+                    //anchors.fill: parent
+                   // fillMode: Image.PreserveAspectCrop
+                   // visible: true
+               // }
+            }
         }
+
 
 
         Rectangle{
