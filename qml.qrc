@@ -1,0 +1,21 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>LeftPanel.qml</file>
+        <file>RightPanel.qml</file>
+        <file>MidPanel.qml</file>
+        <file>InnerLeftPanel.qml</file>
+    </qresource>
+    <qresource prefix="/materials">
+        <file>d86f0134e858488b9c2e4865.jpg</file>
+        <file>commercial-plane-high-poly-3d-model-obj-fbx-blend-dae-mtl.jpg</file>
+        <file>airplaneModel.png</file>
+        <file>picture.png</file>
+        <file>messages log page.png</file>
+        <file>projects page.png</file>
+        <file>history log page.png</file>
+        <file>proj_info.png</file>
+        <file>help.png</file>
+        <file>collapse button.png</file>
+    </qresource>
+</RCC>
